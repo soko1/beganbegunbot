@@ -7,9 +7,13 @@ By the way, subscribe: [@beganbegunbot](https://t.me/beganbegunbot)
 
 <img src="/screenshot.png" width="50%" />
 
-# Demo 
+# Bot in action 
 
 [@beganbegunbot](https://t.me/beganbegunbot)
+
+# My other bots for learning English 
+
+[@Pronouncewordbot](https://t.me/Pronouncewordbot) ([source code](https://github.com/soko1/pronouncewordbot/)) - type the word and get back an audio file with it's pronunciation.
 
 # Contacts
 
