@@ -1,0 +1,4 @@
+[system]
+BOT_API = __INSERT_BOTAPI_CODE__
+DB_VERB = db_words.txt
+DB_WRITE_COMMANDS = requests.log

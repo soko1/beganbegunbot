@@ -1,0 +1,256 @@
+|arise|arose|arisen|возникать|
+|awake|awoke|awoke|пробуждаться|
+|be|was/were|been|быть|
+|bear|bore|born|родиться, родить|
+|beat|beat|beaten|бить|
+|become|became|become|становиться|
+|befall|befell|befallen|приключаться|
+|beget|begot/begat|begot/begotten|вызывать, порождать|
+|begin|began|begun|начинать|
+|behold|beheld|beheld|увидеть, узреть|
+|bend|bent|bent|сгибать|
+|beseech|beseech/besought|beseech/besought|просить, умолять|
+|beset|beset|beset|осаждать, окружать|
+|bestride|bestrode|bestridden|садиться, сидеть верхом|
+|bet|bet|bet|держать пари, быть уверенным|
+|bid|bid|bid|предлагать цену|
+|bind|bound|bound|вязать, связывать|
+|bite|bit|bitten|кусать|
+|bleed|bled|bled|кровоточить|
+|bless|blessed/blest|blessed/blest|благословлять|
+|blow|blew|blown|дуть|
+|break|broke|broken|ломать|
+|breed|bred|bred|размножать, порождать|
+|bring|brought|brought|приносить|
+|broadcast|broadcast/broadcasted|broadcast/broadcasted|транслировать|
+|browbeat|browbeat|browbeaten|запугивать|
+|build|built|built|строить|
+|burn|burnt|burnt|гореть, жечь|
+|burst|burst|burst|взрываться|
+|bust|bust/busted|bust/busted|сломать, разрушать|
+|buy|bought|bought|покупать|
+|cast|cast|cast|бросать, кидать|
+|catch|caught|caught|ловить|
+|choose|chose|chosen|выбирать|
+|cleave|cleave/clove/cleft|cleaved/cloven|раскалывать|
+|cling|clung|clung|цепляться|
+|come|came|come|приходить|
+|cost|cost|cost|стоить|
+|creep|crept|crept|ползать, красться|
+|cut|cut|cut|резать|
+|deal|dealt|dealt|иметь дело|
+|dig|dug|dug|копать|
+|do|did|done|делать|
+|draw|drew|drawn|рисовать|
+|dream|dreamt/dreamed|dreamt/dreamed|мечтать|
+|drink|drank|drunk|пить|
+|drive|drove|driven|вести машину|
+|dwell|dwelt|dwelt|подробно останавливаться (начем-то)|
+|eat|ate|eaten|есть, кушать|
+|fall|fell|fallen|падать|
+|feed|fed|fed|кормить|
+|feel|felt|felt|чувствовать|
+|fight|fought|fought|драться, бороться|
+|find|found|found|находить|
+|fit|fit|fit|быть в пору, подходить|
+|flee|fled|fled|убегать, спасаться бегством|
+|fling|flung|flung|бросать, кидать|
+|fly|flew|flown|летать|
+|forbear|forbore|forborne|воздерживаться|
+|forbid|forbade/forbad|forbidden|запрещать|
+|forecast|forecast/forecasted|forecast/forecasted|предсказывать|
+|foresee|foresaw|foreseen|предвидеть|
+|foretell|foretold|foretold|предсказывать|
+|forget|forgot|forgotten|забывать|
+|forgive|forgave|forgiven|прощать|
+|forsake|forsook|forsaken|оставлять, покидать|
+|forswear|forswore|foresworn|отказываться, отрекаться|
+|freeze|froze|frozen|замерзать|
+|gainsay|gainsaid|gainsaid|отрицать, возражать|
+|get|got|got|получать|
+|gird|girt/girded|girt/girded|опоясывать, подпоясываться|
+|give|gave|given|давать|
+|go|went|gone|идти|
+|grind|ground|ground|молоть|
+|grow|grew|grown|расти|
+|hang|hung|hung|вешать, висеть|
+|have|had|had|иметь|
+|hew|hewed|hewed/hewn|разрубать, рассекать|
+|hear|heard|heard|слышать|
+|hide|hid|hidden|прятаться|
+|hit|hit|hit|ударять|
+|hold|held|held|держать|
+|hurt|hurt|hurt|повредить, ушибить|
+|input|input/inputted|input/inputted|вводить (в компьютер)|
+|inset|inset|inset|вставлять, вкладывать|
+|interweave|interwove|interwoven|переплетать, сплетать|
+|keep|kept|kept|держать|
+|kneel|knelt|knelt|стоять на коленях|
+|knit|knit/knitted|knit/knitted|вязать|
+|know|knew|known|знать|
+|lay|laid|laid|класть|
+|lean|leant/leaned|leant/leaned|наклоняться, прислоняться|
+|lead|led|led|вести|
+|learn|learnt/learned|learnt/learned|учить (что-либо)|
+|leap|leapt/leaped|leapt/leaped|прыгать|
+|leave|left|left|оставлять|
+|lend|lent|lent|одалживать, давать взаймы|
+|let|let|let|позволять|
+|lie|lay|lain|лежать|
+|light|lit|lit|освещать, зажигать|
+|lose|lost|lost|терять|
+|make|made|made|делать|
+|mean|meant|meant|иметь ввиду, намереваться, подозревать|
+|meet|met|met|встречать|
+|miscast|miscast|miscast|дать неподходящую роль|
+|mishear|misheard|misheard|ослышаться|
+|mishit|mishit|mishit|промахнуться|
+|mislay|mislaid|mislaid|класть не на место|
+|mislead|misled|misled|вводить в заблуждение|
+|misread|misread|misread|прочитать неправильно|
+|misspell|misspelt/misspelled|misspelt/misspelled|писать с орфографическими ошибками|
+|misspend|misspent|misspent|неразумно, зря тратить деньги|
+|mistake|mistook|mistaken|ошибаться|
+|misunderstand|misunderstood|misunderstood|неправиль нопонять|
+|mow|mowed|mowed/mown|косить|
+|outbid|outbid|outbid|перебивать цену, перекупать|
+|outdo|outdid|outdone|превзойти|
+|outgrow|outgrew|outgrown|перерастать, вырастать|
+|output|output|output|выпускать, выводить (данные)|
+|outrun|outran|outrun|перегонять, опережать|
+|outsell|outsold|outsold|продаваться лучше или дороже, чем другой товар|
+|outshine|outshone|outshone|затмить|
+|overbid|overbid|overbid|перебивать цену|
+|overcome|overcame|overcome|преодолевать, побороть|
+|overdo|overdid|overdone|перестараться|
+|overeat|overate|overeaten|объедаться, передать|
+|overfly|overflew|overflown|перелетать|
+|overhang|overhung|overhung|нависать|
+|overhear|overheard|overheard|подслушивать|
+|overlay|overlaid|overlaid|покрывать|
+|overpay|overpaid|overpaid|переплачивать|
+|override|overrode|overridden|отменять, перевешивать|
+|overrun|overran|overrun|переходить пределы, границы|
+|oversee|oversaw|overseen|наблюдать, надзирать|
+|overshoot|overshot|overshot|промахнуться|
+|oversleep|overslept|overslept|проспать|
+|overtake|overtook|overtaken|обогнать, овладевать|
+|overthrow|overthrew|overthrown|перебрасывать, свергать|
+|partake|partook|partaken|принимать участие|
+|pay|paid|paid|платить|
+|prepay|prepaid|prepaid|платить вперёд, предоплата|
+|prove|proved|proved/proven|доказывать|
+|put|put|put|класть|
+|quit|quit|quit|оставлять, покидать|
+|read|read|read|читать|
+|rebuild|rebuilt|rebuilt|отстроить заново, реконструировать|
+|recast|recast|recast|переделывать, изменять|
+|redo|redid|redone|делать вновь, переделывать|
+|remake|remade|remade|переделать|
+|rend|rent|rent|вернуть, возвращать|
+|repay|repaid|repaid|выплатить|
+|rerun|reran|rerun|повторно показывать, перезапускать|
+|resell|resold|resold|перепродавать|
+|reset|reset|reset|вновь устанавливать, сбрасывать|
+|resit|resat|resat|получение|
+|retake|retook|retaken|пересдавать экзамен, снова взять|
+|retell|retold|retold|пересказать|
+|rewrite|rewrote|rewritten|переписать|
+|ride|rode|ridden|ездить верхом|
+|ring|rung|rung|звонить|
+|rise|rose|risen|подниматься|
+|run|ran|run|бежать|
+|saw|sawed|sawn|пилить|
+|say|said|said|говорить|
+|see|saw|seen|видеть|
+|seek|sought|sought|искать|
+|sell|sold|sold|продавать|
+|send|sent|sent|отправлять|
+|set|set|set|ставить, устанавливать|
+|sew|sewed|sewn|шить|
+|shake|shook|shaken|трясти|
+|shear|sheared|sheared/shorn|стричь|
+|shed|shed|shed|проливать|
+|shine|shone|shone|светить, сиять|
+|shoe|shod|shod|обувать, подковывать|
+|shoot|shot|shot|стрелять|
+|show|showed|shown|показывать|
+|shrink|shrank/shrunk|shrunk|сокращаться, сжиматься|
+|shut|shut|shut|закрывать|
+|sing|sang|sung|петь|
+|sink|sank|sunk|тонуть, погружаться|
+|sit|sat|sat|сидеть|
+|slay|slew|slain|убивать, уничтожать|
+|sleep|slept|slept|спать|
+|slide|slid|slid|скользить|
+|sling|slung|slung|бросать, швырять|
+|slink|slunk|slunk|красться|
+|slit|slit|slit|рвать|
+|smell|smelt|smelt|чувствовать запах, нюхать|
+|smite|smote|smitten|ударять, бить|
+|sow|sowed|sown|сеять|
+|speak|spoke|spoken|говорить|
+|speed|sped/speeded|sped/speeded|мчаться, спешить|
+|spend|spent|spent|тратить|
+|spell|spelt/spelled|spelt/spelled|произносить по буквам|
+|spill|spilt/spilled|spilt/spilled|проливать|
+|spin|spun|spun|прясть, оборачиваться|
+|spit|spat|spat|плевать|
+|split|split|split|расколоть, разбить|
+|spoil|spoilt/spoiled|spoilt/spoiled|портить|
+|spotlight|spotlit/spotlighted|spotlit/spotlighted|осветить|
+|spread|spread|spread|распространяться|
+|spring|sprang|sprung|бросаться, возникнуть|
+|stand|stood|stood|стоять|
+|stick|stuck|stuck|приклеивать, сдержаться|
+|sting|stung|stung|жалить|
+|stink|stank/stunk|stunk|вонять|
+|steal|stole|stolen|красть|
+|strew|strewed|strewn|разбрасывать|
+|stride|strode|stridden|шагать|
+|strike|struck|struck|ударять, бить|
+|string|strung|strung|натягивать, нанизывать|
+|strive|strove|striven|стараться|
+|sublet|sublet|sublet|сдавать в субаренду|
+|swear|swore|sworn|клясться, ругаться|
+|sweep|swept|swept|подметать, мчаться|
+|swell|swelled|swollen|разбухать|
+|swim|swam|swum|плавать|
+|swing|swung|swung|качаться, вертеться|
+|take|took|taken|брать|
+|teach|taught|taught|обучать|
+|tear|tore|torn|рвать|
+|tell|told|told|сказать|
+|think|thought|thought|думать|
+|thrive|throve/thrived|thriven/thrived|преуспевать, процветать|
+|throw|threw|thrown|бросать|
+|thrust|thrust|thrust|толкать, засовывать|
+|tread|trod|trodden|ступать, наступать|
+|unbend|unbent|unbent|выпрямляться, разгибаться|
+|undercut|undercut|undercut|подрезать, сбивать цены|
+|undergo|underwent|undergone|испытывать, подвергаться|
+|underlie|underlay|underlain|лежать в основе|
+|underpay|underpaid|underpaid|недоплачивать|
+|undersell|undersold|undersold|продавать дешевле|
+|understand|understood|understood|понимать|
+|underwrite|underwrote|underwritten|подписывать, гарантировать|
+|undertake|undertook|undertaken|предпринимать, совершать|
+|undo|undid|undone|расстёгивать, развязывать|
+|unwind|unwound|unwound|разматывать|
+|uphold|upheld|upheld|поддерживать, одобрять|
+|upset|upset|upset|опрокидывать, расстраивать|
+|wake|woke|woken|просыпаться, будить|
+|waylay|waylaid|waylaid|подстерегать|
+|wear|wore|worn|носить (одежду, аксессуары)|
+|weave|wove|woven|ткать, плести|
+|wed|wed/wedded|wed/wedded|жениться, выходить замуж|
+|weep|wept|wept|плакать|
+|wet|wet/wetted|wet/wetted|мочить, смачивать|
+|win|won|won|выигрывать|
+|wind|wound|wound|обматывать, заводить(часы)|
+|withdraw|withdrew|withdrawn|взять назад, изымать, забирать|
+|withhold|withheld|withheld|воздерживаться, удерживать|
+|withstand|withstood|withstood|выдержать, противостоять|
+|wring|wrung|wrung|крутить, жать|
+|write|wrote|written|писать|
+|clothe|clad|clad|облекать|
