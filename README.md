@@ -5,7 +5,7 @@ By the way, subscribe: [@beganbegunbot](https://t.me/beganbegunbot)
 
 # Screenshot 
 
-<img src="/screenshot.png" style="width: 50%;"/>
+<img src="/screenshot.png" width="50%" />
 
 # Contacts
 
