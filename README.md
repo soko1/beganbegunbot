@@ -17,20 +17,11 @@ By the way, subscribe: [@beganbegunbot](https://t.me/beganbegunbot)
 
 # Contacts
 
-[@gnupg](https://t.me/gnupg) (telegram)<br>
 nullbsd@gmail.com (email)
 
 # Donate
 
 Do you want feed my cat?
 
-Paypal: mathematics1688@gmail.com
-
-Bitcoin: `1NYYFoJiRPnkmFbcv5kYLqwsweix1cVmBT`
-
-(Webmoney)
-
-WMZ: `Z156396869707`<br>
-WMR: `R409106892241`<br>
-WME: `E320058433666`
+Bitcoin: `bc1qs7v6vfp0xpe2slcpwlhftdeqj2w92r3pkykjn6`
 
