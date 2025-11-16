@@ -1,219 +1,153 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-This is a telegram-bot for for learning irregular verbs. 
-Type any form of an irregular (!) verb and get back all three forms together
-By the way, subscribe: @beganbegunbot
-
-Get the code: https://github.com/soko1/beganbegunbot
-
-# Contacts
-
-@gnupg (telegram)
-nullbsd@gmail.com (email)
-
-# Donate
-
-Do you want feed my cat?
-
-Bitcoin: 1NYYFoJiRPnkmFbcv5kYLqwsweix1cVmBT
-
-(Webmoney)
-
-WMZ: Z156396869707
-WMR: R409106892241
-WME: E320058433666
-"""
-
-from __future__ import unicode_literals
-import telepot.aio
-import os
-import configparser
 import asyncio
-import time
 import re
-from IPython import embed
+import configparser
+import os
+from aiogram import Bot, Dispatcher, types
+from aiogram.filters import Command
+from aiogram.types import Message
 
+# --- Конфиг ---
 config = configparser.ConfigParser()
 config.read("config.ini")
 
+BOT_TOKEN = config['system']['BOT_API']
+DB_VERB = config['system']['DB_VERB']
+DB_LOG = config['system']['DB_WRITE_COMMANDS']
 
-# защита от повторного запуска
-checkproc = os.popen("ps aux | grep %s" % __file__).read()
-if checkproc.count("python") > 1:
+# --- Защита от повторного запуска ---
+if os.popen(f"ps aux | grep {__file__} | grep -v grep").read().count("python") > 1:
     print("Бот уже запущен")
-    os._exit(1)
+    exit(1)
 
-async def main(msg):
-#    import IPython; IPython.embed()
-    chat_id = msg['chat']['id']
-    command = msg['text']
+# --- Загрузка базы глаголов ---
+with open(DB_VERB, 'r', encoding='utf-8') as f:
+    VERBS = f.readlines()
 
-    help = """
+# --- Открытие лога ---
+log_file = open(DB_LOG, 'a', encoding='utf-8')
+
+# --- Aiogram ---
+bot = Bot(token=BOT_TOKEN)
+dp = Dispatcher()
+
+# --- Тексты ---
+HELP_TEXT = """
 Type any form of an *irregular (!)* verb and get back all three forms together
+If you find a mistake or have ideas — write to @rogork
+/thanks — supporters
+/donate — support the developer
+""".strip()
 
-If there are some words missing or you have an idea of improving the bot — be sure to contact me (@gnupg) and  you'll appear (if you wish) here on the list of supporters — /thanks
-
-You can also thank me by giving a positive feedback or buy me a cup of coffee here — /donate
-"""
-
-    thanks = """
+THANKS_TEXT = """
 Thanks:
+@azinchanka [ideas and English tips]
+@gaashek [bot name inventor]
+@gilving [code advice]
+@vma392 [tried to help with tables]
+""".strip()
 
-@azinchanka [идеи и объяснения по тонкостям англ. языка]
-@gaashek [оригинальное название для бота, именно она его придумала :)]
-@gilving [консультация по изыскам написания кода]
-@vma392 [желание помочь с таблицами в telegram, но телега подвела...]
-"""
+DONATE_TEXT = """
+Support the developer:
+https://sakaloucv.github.io/donate
+""".strip()
 
-    donate = """
-If you want to give thanks buying me a cup of coffee (which I'm really fond of!) — you're welcome:
+FORBIDDEN = ['хуй', 'пизд', 'ебат', 'fuck', 'suck', 'dick']
 
-Paypal: mathematics1688@gmail.com
+# --- Команды ---
+@dp.message(Command("start", "help"))
+async def cmd_help(message: Message):
+    await message.answer(HELP_TEXT, parse_mode="Markdown")
 
-Bitcoin: `1NYYFoJiRPnkmFbcv5kYLqwsweix1cVmBT`
+@dp.message(Command("thanks"))
+async def cmd_thanks(message: Message):
+    await message.answer(THANKS_TEXT)
 
-(Webmoney)
-WMZ: `Z156396869707`
-WMR: `R409106892241`
-WME: `E320058433666`
+@dp.message(Command("donate"))
+async def cmd_donate(message: Message):
+    await message.answer(DONATE_TEXT, parse_mode="Markdown")
 
-Any other way: email me at nullbsd@gmail.com or write back here on Telegram @gnupg
+@dp.message(Command("count"))
+async def cmd_count(message: Message):
+    try:
+        with open(DB_LOG, 'r', encoding='utf-8') as f:
+            content = f.read()
+        users = len(set(re.findall(r'(\d+):', content)))
+        await message.answer(f"Кол-во уникальных пользователей: {users}")
+    except Exception as e:
+        await message.answer(f"Ошибка: {e}")
 
-Thanks!
-"""
-    forbidden_words = ['хуй', 'пизд', "ебат", "fuck", "suck", "dick"]
+# --- Основной обработчик ---
+@dp.message()
+async def handle_text(message: Message):
+    text = message.text.strip()
+    chat_id = message.chat.id
 
-    # вывод справки
-    if command.find("/start") != -1:
-        await bot.sendMessage(chat_id, help, parse_mode= 'Markdown')
+    # Фильтр: только буквы и пробелы
+    match = re.search(r'[\w ]+', text)
+    if not match:
+        await message.answer(HELP_TEXT, parse_mode="Markdown")
         return
-    if command.find("/help") != -1:    
-        await bot.sendMessage(chat_id, help, parse_mode= 'Markdown')
-        return
-    # доска почёта
-    if command.find("/thanks") != -1:    
-        await bot.sendMessage(chat_id, thanks)
-        return
-    # пожертвования
-    if command.find("/donate") != -1:
-        await bot.sendMessage(chat_id, donate, parse_mode= 'Markdown')
-        return
-    # кол-во уникальных пользователей (незадокументированная команда)
-    if command.find("/count") != -1:
-        logfile = open(config['system']['DB_WRITE_COMMANDS'], 'r')
-        logfile_content = logfile.read()
-        logfile.close()
-        num_of_uniq_users = len(set(re.findall('\d+:', logfile_content)))
-        await bot.sendMessage(chat_id, 'Кол-во уникальных пользователей: ' + str(num_of_uniq_users))
-        return    
 
-    # отсеивание мусора из спецсимволов
-    search_letters = re.search(r'[\w ]+', command)
-    if search_letters:
-        command = search_letters.group()
+    word = match.group().lower()
+    if len(word) < 2 or len(word) > 30:
+        await message.answer(HELP_TEXT, parse_mode="Markdown")
+        return
+
+    # Поддержка "to go"
+    parts = word.split()
+    if len(parts) == 2 and parts[0] == 'to' and len(parts[1]) > 1:
+        word = parts[1]
+    elif len(parts) != 1:
+        await message.answer(HELP_TEXT, parse_mode="Markdown")
+        return
     else:
-        await bot.sendMessage(chat_id, help)
-        return 
+        word = parts[0]
 
-    # отсеивание сообщений менее 2 символов и более 30
-    command_len = len(command)
-    if command_len < 2 or command_len > 30:
-        await bot.sendMessage(chat_id, help)
+    # Логирование
+    print(f"{chat_id}: {word}", file=log_file, flush=True)
+
+    # Фильтр мата
+    if any(bad in word for bad in FORBIDDEN):
+        await message.answer("shame on you! :)")
         return
 
-    # полученная строка
-    string = command.lower()
-
-    #
-    # проверка на наличие частички to перед глаголом
-    #
-
-    string = string.split(" ")
-    # если пришло два слова
-    if len(string) > 1:
-        # где первое слово to, а второе более 1 символа
-        if 'to' == string[0] and len(string[1]) > 1:
-            # используем для поиска второе слово
-             word = string[1]
-        else:
-            # иначе выводим ошибку
-            await bot.sendMessage(chat_id, help)
-            return 
-    else:
-        # если пришло одно слово - испольузем его
-        word = string[0]
-
-    # запись лога с присланными сообщениями
-    f.write("%s: %s\n" % (chat_id, word))
-    f.flush()
-
-    # пасхальное яичко на мат :)
-    if [w for w in forbidden_words if w in word]:
-        await bot.sendMessage(chat_id, "shame on you! :)")
-        return
-
-    #
-    # Реализация улучшенного поиска
-    #
-    # если букв в слове меньше 4
+    # Поиск
     if len(word) < 4:
-        # то ищем лишь это слово целиком
-        found_words = [s for s in list_of_words if '|' + word + '|' in s]
+        found = [line for line in VERBS if f'|{word}|' in line]
     else:
-        # иначе будем искать это слово + все однокоренные слова
-        found_words = [s for s in list_of_words if word in s]
+        found = [line for line in VERBS if word in line]
 
-    # ничего не найдено
-    if not found_words:
-        message_for_send = """
-        The word *%s* is not found in a database. That may happen for two reasons:
-1) it is misspelled
-2) or it is not an *irregular verb (!)*
-
-If you find it wrong, then be sure to contact me — @gnupg
-
-Get more info — /help
-""" % word
-        await bot.sendMessage(chat_id, message_for_send, parse_mode= 'Markdown')
+    if not found:
+        await message.answer(
+            f"The word *{word}* is not found.\n"
+            "1) misspelled?\n"
+            "2) or not irregular?\n"
+            "Write @rogork if wrong.\n"
+            "/help — more info",
+            parse_mode="Markdown"
+        )
         return
 
-    # формирование сообщения
-    message_for_send = ""
-    for found_word in found_words:
-        found_word_split = found_word.split("|")
-        message_for_send += (
-                            found_word_split[1] + "\n" +
-                            found_word_split[2] + "\n" +
-                            found_word_split[3] + "\n" + "(" +
-                            found_word_split[4] + ")\n\n"
-                            )
-    await bot.sendMessage(chat_id, message_for_send, parse_mode= 'Markdown')
+    # Формируем ответ
+    response = ""
+    for line in found:
+        parts = line.strip().split("|")
+        if len(parts) >= 5:
+            response += f"{parts[1]}\n{parts[2]}\n{parts[3]}\n({parts[4]})\n\n"
+    await message.answer(response.strip(), parse_mode="Markdown")
 
-# активация бота
-bot = telepot.aio.Bot(config['system']['BOT_API'])
+# --- Запуск ---
+async def main():
+    print("Бот запущен...")
+    await dp.start_polling(bot)
 
-# создание списка задач
-loop = asyncio.get_event_loop()
-loop.create_task(bot.message_loop({'chat': main}))
-
-print('Listening ...')
-
-# открытие файла с базой неправильных глаголов
-print ("read database")
-f = open(config['system']['DB_VERB'], 'r')
-list_of_words = f.readlines()
-f.close()
-
-f = open(config['system']['DB_WRITE_COMMANDS'], 'a')
-print ("read file for write")
-
-
-try:
-	loop.run_forever()
-except KeyboardInterrupt:
-    pass
-finally:
-    loop.stop()
-    loop.close()
+if __name__ == '__main__':
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        print("\nБот остановлен.")
+    finally:
+        log_file.close()
